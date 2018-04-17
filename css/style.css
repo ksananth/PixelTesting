@@ -71,8 +71,6 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul.components {
-   
-    position: fixed;
     min-width: 250px;
     max-width: 250px;
     overflow-y: scroll;
@@ -149,10 +147,92 @@ a.article, a.article:hover {
 
 
 
+.Panel {
+    width: 100%;
+    margin: 15px auto;
+}
+
+.Panel__body {
+        padding: 10px 20px;
+    }
+
+.Tabs {
+   background: #363F48;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.Tabs:after {
+        content: ' ';
+        display: table;
+        clear: both;
+    }
+
+.Tabs__tab {
+        float: left;
+        width: 33.333%;
+        text-align: center;
+    }
+
+.Tabs__tab:first-child.active ~ .Tabs__presentation-slider {
+            left: 0;
+        }
+
+.Tabs__tab:nth-child(2).active ~ .Tabs__presentation-slider {
+            left: 33.333%;
+        }
+
+.Tabs__tab:nth-child(3).active ~ .Tabs__presentation-slider {
+            left: calc(33.333% * 2);
+        }
+
+.Tabs__presentation-slider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 33.333%;
+        height: 2px;
+        background-color: #4A66F4;
+        transition: left .25s;
+    }
+
+.Tab {
+    background: #363F48;
+}
+
+.Tab > a {
+    background: #363F48;
+        display: block;
+        padding: 10px 12px;
+        text-decoration: none;
+        color: #666;
+        transition: color .15s;
+    }
+
+.Tab.active > a {
+    background: #363F48;
+            color: #fff;
+        }
+
+.Tab:hover > a {
+    background: #363F48;
+            color: #fff;
+        }
+ #Panel ul li.active > a {
+    color: #fff;
+    background: #363F48;
+ }
+  #Panel ul li.active > a:hover {
+    color: #fff;
+    background: #363F48;
+}
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
 #content {
+    width: 100%;
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
@@ -172,3 +252,9 @@ a.article, a.article:hover {
         display: none;
     }
 }
+
+
+
+.fancybox-custom .fancybox-skin {
+            box-shadow: 0 0 50px #222;
+        }

@@ -258,3 +258,8 @@ a.article, a.article:hover {
 .fancybox-custom .fancybox-skin {
             box-shadow: 0 0 50px #222;
         }
+
+        .fancybox-thumbs img{
+            width: 150px;
+    height: 100px;
+        }

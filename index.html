@@ -35,10 +35,18 @@
     <script type="text/javascript" src="libs/lightbox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
     <script type="text/javascript" src="libs/lightbox/lightbox.js"></script>
 
+ <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+    <link data-require="bootstrap@3.3.6" data-semver="3.3.6" rel="stylesheet" href="bootstrap" />
+    <link data-require="font-awesome@*" data-semver="4.5.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css" />
+    <link rel="stylesheet" href="https://rawgit.com/rajush/angular-dropdown-multiselect/master/dist/angular-dropdownMultiselect.min.css" />
+   
+    
         <script src="libs/angular_1.6.7.js"></script>
+        <script src="https://rawgit.com/rajush/angular-dropdown-multiselect/master/dist/angular-dropdownMultiselect.min.js"></script>
         <script src="js/main.js"></script>
 
 
+    
 
 
     </head>
@@ -80,7 +88,7 @@
                             <li><a href="#">Page 3</a></li>
                         </ul>
                     </li>-->
-                     <li ng-repeat="screen in selectedBrandScreens">
+                     <li ng-repeat="screen in selectedBrandScreens"  ng-class="{active:$first}">
                         <a href="#">{{screen.screenName}}</a>
                     </li>
                 </ul>
@@ -104,19 +112,59 @@
                             </button>
                         </div>
 
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
-                            </ul>
+                       <div style="margin-top: 25px;">
+                                <dropdown-multiselect dropdown-config="config" model="selectedItems"></dropdown-multiselect>
                         </div>
                     </div>
                 </nav>
 
            <div>    
                 <h4>Language Screen</h4>
+               
+            </div>
+             <div>English</div>
+                <hr style="  margin-top: 10px; margin-bottom: 10px; border: 0; border-top: 1px solid #47748b;">
+                <p>
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/3_b.jpg"><img src="images/3_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/2_b.jpg"><img src="images/2_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/1_b.jpg"><img src="images/1_s.jpg" alt="" /></a>
+                     <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/3_b.jpg"><img src="images/3_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/2_b.jpg"><img src="images/2_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/1_b.jpg"><img src="images/1_s.jpg" alt="" /></a>
+
+                </p>
+
+                 <div>French</div>
+                <hr style="  margin-top: 10px; margin-bottom: 10px; border: 0; border-top: 1px solid #47748b;">
+                <p>
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/3_b.jpg"><img src="images/3_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/2_b.jpg"><img src="images/2_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/1_b.jpg"><img src="images/1_s.jpg" alt="" /></a>
+                     <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/3_b.jpg"><img src="images/3_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/2_b.jpg"><img src="images/2_s.jpg" alt="" /></a>
+
+                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/1_b.jpg"><img src="images/1_s.jpg" alt="" /></a>
+
+                </p>
+
+
+                 <div>French</div>
+                <hr style="  margin-top: 10px; margin-bottom: 10px; border: 0; border-top: 1px solid #47748b;">
                 <p>
                     <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
 
@@ -171,7 +219,7 @@
                     evt.currentTarget.classList.add('active');
                     activeTab=evt.currentTarget.firstElementChild.text;
                     var scope = angular.element(document.getElementById('body')).scope();
-                    scope.javaScriptCallAngularJS(activeTab);
+                    scope.loadScreenByBrand(activeTab);
                 }
          </script>
           <script type="text/javascript" src="libs/lightbox/lightbox.js"></script>

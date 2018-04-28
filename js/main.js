@@ -1,4 +1,4 @@
-var app = angular.module("AutomateScreenshotApp", []);
+var app = angular.module("AutomateScreenshotApp", [ 'dropdown-multiselect' ]);
  
 // Controller Part
 app.controller("ManageScreenshotsController", function($scope, $http, $filter) {
@@ -7,7 +7,7 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter) {
     var tabs = document.getElementsByClassName('Tab');
     $scope.screens = [];
     $scope.selectedBrand = "fortis";
-    $scope.selectedBrandScreens = [{"screenName": "Email screen"}];
+    $scope.selectedBrandScreens = [];
    
     // Now load the data from server
     _refreshEmployeeData();
@@ -18,13 +18,19 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter) {
         console.log(localStorage.getItem('active'));
       };
 
-       $scope.javaScriptCallAngularJS = function(value) {
+       $scope.loadScreenByBrand = function(value) {
             $scope.selectedBrand = value;
             console.log("Selected brand-"+$scope.selectedBrand);
             console.log($scope.screens[$scope.selectedBrand.toLowerCase()]);
             $scope.selectedBrandScreens=($scope.screens[$scope.selectedBrand.toLowerCase()]) ;
-            $scope.$apply();
+            CheckScopeBeforeApply();
         };
+
+    function CheckScopeBeforeApply() {
+        if(!$scope.$$phase) {
+             $scope.$apply();
+        }
+    };
   
     // Private Method  
     // HTTP GET- get all screens collection
@@ -36,6 +42,7 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter) {
         }).then(
             function(res) { // success
                 $scope.screens=(res.data);
+                $scope.loadScreenByBrand($scope.selectedBrand);
                 console.log($scope.screens);
             },
             function(res) { // error
@@ -43,5 +50,116 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter) {
             }
         );
     }
+
+
+
+    var options = [ {
+          'Id': 1,
+          'Name': 'Batman',
+          'Costume': 'Black'
+      }, {
+          'Id': 2,
+          'Name': 'Superman',
+          'Costume': 'Red & Blue'
+      }, {
+          'Id': 3,
+          'Name': 'Hulk',
+          'Costume': 'Green'
+      }, {
+          'Id': 4,
+          'Name': 'Flash',
+          'Costume': 'Red'
+      }, {
+          'Id': 5,
+          'Name': 'Dare-Devil',
+          'Costume': 'Maroon'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }];
+  
+  $scope.config = {
+      options: options,
+      trackBy: 'Id',
+      displayBy: [ 'Name' ],
+      icon: 'glyphicon glyphicon-unchecked',
+      displayBadge: true,
+      height: '200px',
+      filter: true,
+      multiSelect: true
+  };
  
 });

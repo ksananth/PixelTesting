@@ -151,7 +151,7 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter) {
           'Costume': 'Red'
       }];
   
-  $scope.config = {
+  $scope.configBrand = {
       options: options,
       trackBy: 'Id',
       displayBy: [ 'Name' ],
@@ -159,7 +159,274 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter) {
       displayBadge: true,
       height: '200px',
       filter: true,
-      multiSelect: true
+      multiSelect: true,
+      title: "Select Brand",
+      identifier: "brand"
+  };
+
+  $scope.configScreen = {
+      options: options,
+      trackBy: 'Id',
+      displayBy: [ 'Name' ],
+      icon: 'glyphicon glyphicon-unchecked',
+      displayBadge: true,
+      height: '200px',
+      filter: true,
+      multiSelect: true,
+      title: "Select Screen",
+      identifier: "screen"
+  };
+
+    $scope.configLanguage = {
+      options: options,
+      trackBy: 'Id',
+      displayBy: [ 'Name' ],
+      icon: 'glyphicon glyphicon-unchecked',
+      displayBadge: true,
+      height: '200px',
+      filter: true,
+      multiSelect: true,
+      title: "Select Language"
+  };
+
+    $scope.configDevice = {
+      options: options,
+      trackBy: 'Id',
+      displayBy: [ 'Name' ],
+      icon: 'glyphicon glyphicon-unchecked',
+      displayBadge: true,
+      height: '200px',
+      filter: true,
+      multiSelect: true,
+      title: "Select Device"
   };
  
 });
+
+
+app.controller("ManageScreenshotsController1", function($scope, $http, $filter) {
+ var options = [ {
+          'Id': 1,
+          'Name': 'Batman',
+          'Costume': 'Black'
+      }, {
+          'Id': 2,
+          'Name': 'Superman',
+          'Costume': 'Red & Blue'
+      }, {
+          'Id': 3,
+          'Name': 'Hulk',
+          'Costume': 'Green'
+      }, {
+          'Id': 4,
+          'Name': 'Flash',
+          'Costume': 'Red'
+      }, {
+          'Id': 5,
+          'Name': 'Dare-Devil',
+          'Costume': 'Maroon'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }];
+  
+  $scope.configScreen = {
+      options: options,
+      trackBy: 'Id',
+      displayBy: [ 'Name' ],
+      icon: 'glyphicon glyphicon-unchecked',
+      displayBadge: true,
+      height: '200px',
+      filter: true,
+      multiSelect: true,
+      title: "Select Brand",
+      identifier: "brand"
+  };
+    });
+
+
+app.controller("ManageScreenshotsController2", function($scope, $http, $filter) {
+ var options = [ {
+          'Id': 1,
+          'Name': 'Batman',
+          'Costume': 'Black'
+      }, {
+          'Id': 2,
+          'Name': 'Superman',
+          'Costume': 'Red & Blue'
+      }, {
+          'Id': 3,
+          'Name': 'Hulk',
+          'Costume': 'Green'
+      }, {
+          'Id': 4,
+          'Name': 'Flash',
+          'Costume': 'Red'
+      }, {
+          'Id': 5,
+          'Name': 'Dare-Devil',
+          'Costume': 'Maroon'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }, {
+          'Id': 6,
+          'Name': 'Wonder-woman',
+          'Costume': 'Red'
+      }];
+  
+  $scope.configBrand = {
+      options: options,
+      trackBy: 'Id',
+      displayBy: [ 'Name' ],
+      icon: 'glyphicon glyphicon-unchecked',
+      displayBadge: true,
+      height: '200px',
+      filter: true,
+      multiSelect: true,
+      title: "Select Screen",
+      identifier: "screen"
+  };
+    });

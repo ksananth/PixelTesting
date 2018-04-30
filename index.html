@@ -42,7 +42,7 @@
    
     
         <script src="libs/angular_1.6.7.js"></script>
-        <script src="https://rawgit.com/rajush/angular-dropdown-multiselect/master/dist/angular-dropdownMultiselect.min.js"></script>
+        <script src="js/angular-dropdownMultiselect.min.js"></script>
         <script src="js/main.js"></script>
 
 
@@ -111,10 +111,31 @@
                                 <span>Toggle Sidebar</span>
                             </button>
                         </div>
-
-                       <div style="margin-top: 25px;">
-                                <dropdown-multiselect dropdown-config="config" model="selectedItems"></dropdown-multiselect>
+                    <div class="col-lg-12">
+                        <div style="width :33%; padding-top:10px; padding-right:10px; float: left;"  ng-controller="ManageScreenshotsController2">
+                            <dropdown-multiselect dropdown-config="configBrand" model="selectedItems"></dropdown-multiselect>
                         </div>
+                        <div style="width :33%; padding-top:10px; padding-right:10px; float: left;"  ng-controller="ManageScreenshotsController1">
+                            <dropdown-multiselect dropdown-config="configScreen" model="selectedItems"></dropdown-multiselect>
+                        </div>
+                        <!--<div style="width :33%; padding-top:10px; padding-right:10px; float: left;" class="center-block">
+                           <dropdown-multiselect dropdown-config="configLanguage" model="selectedItems"></dropdown-multiselect>
+                        </div>-->
+                    </div>
+                    <div class="col-lg-12">
+                        <!--<div style="width :33%; padding-top:10px; padding-right:10px; float: left;">
+                            <dropdown-multiselect dropdown-config="configDevice" model="selectedItems"></dropdown-multiselect>
+                        </div>-->
+                    </div>
+
+                  
+
+                    <div class="col-lg-12" style="text-align: right;">
+                        <button type="button" class="btn btn-warning">Clear Filters</button>
+                       <button type="button" class="btn btn-primary">Search</button>
+                    </div>
+
+                        
                     </div>
                 </nav>
 

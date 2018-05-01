@@ -8,7 +8,7 @@ $fortis = parseBrandFolders(getFolderPath('fortis'));
 $final = new stdClass();
 $final->fortis = $fortis;
 $final->fintro = $fintro;
-$final->helloBank = $helloBank;
+$final->hellobank = $helloBank;
 
 
 print_r(json_encode($final));

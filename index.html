@@ -38,11 +38,12 @@
  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
     <link data-require="bootstrap@3.3.6" data-semver="3.3.6" rel="stylesheet" href="bootstrap" />
     <link data-require="font-awesome@*" data-semver="4.5.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css" />
-    <link rel="stylesheet" href="https://rawgit.com/rajush/angular-dropdown-multiselect/master/dist/angular-dropdownMultiselect.min.css" />
+    <link rel="stylesheet" href="css/angular-dropdownMultiselect.min.css" />
    
     
         <script src="libs/angular_1.6.7.js"></script>
-        <script src="js/angular-dropdownMultiselect.min.js"></script>
+        <script src="libs/lodash.min.js"></script>
+        <script src="js/angularjs-dropdown-multiselect.min.js"></script>
         <script src="js/main.js"></script>
 
 
@@ -112,20 +113,20 @@
                             </button>
                         </div>
                     <div class="col-lg-12">
-                        <div style="width :33%; padding-top:10px; padding-right:10px; float: left;"  ng-controller="ManageScreenshotsController2">
-                            <dropdown-multiselect dropdown-config="configBrand" model="selectedItems"></dropdown-multiselect>
+                        <div style="width :33%; padding-top:10px; padding-right:10px; float: left;">
+                            <div ng-dropdown-multiselect="" options="brandData" selected-model="brandModel" checkboxes="true" translation-texts ="brandText" extra-settings="brandSettings"></div>
                         </div>
-                        <div style="width :33%; padding-top:10px; padding-right:10px; float: left;"  ng-controller="ManageScreenshotsController1">
-                            <dropdown-multiselect dropdown-config="configScreen" model="selectedItems"></dropdown-multiselect>
+                        <div style="width :33%; padding-top:10px; padding-right:10px; float: left;" >
+                            <div ng-dropdown-multiselect="" options="screenData" selected-model="screenModel" checkboxes="true" translation-texts ="screenText" extra-settings="screenSettings"></div>
                         </div>
-                        <!--<div style="width :33%; padding-top:10px; padding-right:10px; float: left;" class="center-block">
-                           <dropdown-multiselect dropdown-config="configLanguage" model="selectedItems"></dropdown-multiselect>
-                        </div>-->
+                        <div style="width :33%; padding-top:10px; padding-right:10px; float: left;" class="center-block">
+                           <div ng-dropdown-multiselect="" options="languageData" selected-model="languageModel" checkboxes="true" translation-texts ="languageText" extra-settings="languageSettings"></div>
+                        </div>
                     </div>
                     <div class="col-lg-12">
-                        <!--<div style="width :33%; padding-top:10px; padding-right:10px; float: left;">
-                            <dropdown-multiselect dropdown-config="configDevice" model="selectedItems"></dropdown-multiselect>
-                        </div>-->
+                        <div style="width :33%; padding-top:10px; padding-right:10px; float: left;">
+                            <div ng-dropdown-multiselect="" options="deviceData" selected-model="deviceModel" checkboxes="true" translation-texts ="deviceText" extra-settings="deviceSettings"></div>
+                        </div>
                     </div>
 
                   

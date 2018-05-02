@@ -36,23 +36,34 @@
     <script type="text/javascript" src="libs/lightbox/lightbox.js"></script>
 
  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
-    <link data-require="bootstrap@3.3.6" data-semver="3.3.6" rel="stylesheet" href="bootstrap" />
     <link data-require="font-awesome@*" data-semver="4.5.0" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.css" />
     <link rel="stylesheet" href="css/angular-dropdownMultiselect.min.css" />
+
+    <link rel="stylesheet" href="libs/ngNotificationsBar/ngNotificationsBar.min.css">
    
     
         <script src="libs/angular_1.6.7.js"></script>
+        <script src="js/angular-route.js"></script>
+  <script src="js/angular-animate.js" ></script>
+  <script src="js/toaster.js"></script>
+  <script src="libs/ngNotificationsBar/angular-sanitize.js"></script>
+  <script src="libs/ngNotificationsBar/ngNotificationsBar.min.js"></script>
+
         <script src="libs/lodash.min.js"></script>
         <script src="js/angularjs-dropdown-multiselect.min.js"></script>
-        <script src="js/main.js"></script>
+        
+        <script src="app/main.js"></script>
+        <script src="app/dashboard.js"></script>
+        <script src="app/controller.js"></script>
 
 
     
 
 
     </head>
-    <body id = "body" ng-app="AutomateScreenshotApp" ng-controller="ManageScreenshotsController">
-
+    <body id = "body" ng-app="myApp" ng-controller="ManageScreenshotsController"  ng-class="animation">
+<notifications-bar class="notifications"  closeIcon="fa fa-times-circle"></notifications-bar>
+      <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
         <div class="wrapper">
             <!-- Sidebar Holder -->
             <nav id="sidebar">
@@ -90,7 +101,7 @@
                         </ul>
                     </li>-->
                      <li ng-repeat="screen in selectedBrandScreens"  ng-class="{active:$first}">
-                        <a href="#">{{screen.screenName}}</a>
+                        <a href="index.html#/dashboard?screen={{screen.screenName}}">{{screen.screenName}}</a>
                     </li>
                 </ul>
 
@@ -140,76 +151,10 @@
                     </div>
                 </nav>
 
-           <div>    
-                <h4>Language Screen</h4>
-               
-            </div>
-             <div>English</div>
-                <hr style="  margin-top: 10px; margin-bottom: 10px; border: 0; border-top: 1px solid #47748b;">
-                <p>
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
 
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/3_b.jpg"><img src="images/3_s.jpg" alt="" /></a>
+                <div ng-view class="view"></div>
 
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/2_b.jpg"><img src="images/2_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/1_b.jpg"><img src="images/1_s.jpg" alt="" /></a>
-                     <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/3_b.jpg"><img src="images/3_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/2_b.jpg"><img src="images/2_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/1_b.jpg"><img src="images/1_s.jpg" alt="" /></a>
-
-                </p>
-
-                 <div>French</div>
-                <hr style="  margin-top: 10px; margin-bottom: 10px; border: 0; border-top: 1px solid #47748b;">
-                <p>
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/3_b.jpg"><img src="images/3_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/2_b.jpg"><img src="images/2_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/1_b.jpg"><img src="images/1_s.jpg" alt="" /></a>
-                     <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/3_b.jpg"><img src="images/3_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/2_b.jpg"><img src="images/2_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/1_b.jpg"><img src="images/1_s.jpg" alt="" /></a>
-
-                </p>
-
-
-                 <div>French</div>
-                <hr style="  margin-top: 10px; margin-bottom: 10px; border: 0; border-top: 1px solid #47748b;">
-                <p>
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/3_b.jpg"><img src="images/3_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/2_b.jpg"><img src="images/2_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/1_b.jpg"><img src="images/1_s.jpg" alt="" /></a>
-                     <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/4_b.jpg"><img src="images/4_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/3_b.jpg"><img src="images/3_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/2_b.jpg"><img src="images/2_s.jpg" alt="" /></a>
-
-                    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="images/1_b.jpg"><img src="images/1_s.jpg" alt="" /></a>
-
-                </p>
-            </div>
-
-               
-
-            </div>
-        </div>
+           
 
 
 

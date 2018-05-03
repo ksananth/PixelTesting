@@ -1,43 +1,94 @@
 <div ng-repeat="screen in selectedScreenImg">    
 
-                <h4>{{screen.screenName}}</h4>
+    <h4><span>{{screen.screenName}}</span></h4>
                
             
              <div ng-if="screen.imagesURL['EN']">
-                <div>English</div>
-                <hr style=" margin-top: 10px; margin-bottom: 10px; border: 0; border-top: 1px solid #47748b;">
-                <p>
-                    <a  ng-repeat="(key,value) in screen.imagesURL['EN']" class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}"><img src="{{getUrl(value.imgUrl)}}" alt="" /></a>
+                <h2 class="screenHeader"><span>English</span></h2>
+                    <!--<a  ng-repeat="(key,value) in screen.imagesURL['EN']" class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}"><img src="{{getUrl(value.imgUrl)}}" alt="" /></a>-->
 
-                </p>
+                    <div class="row">
+                        <div class="col-md-3" ng-repeat="(key,value) in screen.imagesURL['EN']">
+                          <div class="thumb">
+                            <a class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}">
+                              <img src="{{getUrl(value.imgUrl)}}" class="img-responsive">
+                              <div class="hover-opaque">
+                              </div>
+                            </a>
+                          </div>
+                          <div class="thumb thumb-caption text-center">
+                            <figcaption><a href="#">{{value.deviceName}}</a></figcaption>
+                          </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div ng-if="screen.imagesURL['FR']">
-                <div>French</div>
-                <hr style=" margin-top: 10px; margin-bottom: 10px; border: 0; border-top: 1px solid #47748b;">
-                <p>
-                    <a  ng-repeat="(key,value) in screen.imagesURL['FR']" class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}"><img src="{{getUrl(value.imgUrl)}}" alt="" /></a>
+                <h2 class="screenHeader"><span>French</span></h2>
+                
+                    <!--<a  ng-repeat="(key,value) in screen.imagesURL['FR']" class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}"><img src="{{getUrl(value.imgUrl)}}" alt="" /></a>-->
 
-                </p>
+                   <div class="row">
+                        <div class="col-md-3" ng-repeat="(key,value) in screen.imagesURL['FR']">
+                          <div class="thumb">
+                            <a class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}">
+                              <img src="{{getUrl(value.imgUrl)}}" class="img-responsive">
+                              <div class="hover-opaque">
+                              </div>
+                            </a>
+                          </div>
+                          <div class="thumb thumb-caption text-center">
+                            <figcaption><a href="#">{{value.deviceName}}</a></figcaption>
+                          </div>
+                        </div>
+                    </div>
+
                 </div>
 
 
                  <div ng-if="screen.imagesURL['NL']">
-                <div>Dutch</div>
-                <hr style=" margin-top: 10px; margin-bottom: 10px; border: 0; border-top: 1px solid #47748b;">
-                <p>
-                    <a  ng-repeat="(key,value) in screen.imagesURL['NL']" class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}"><img src="{{getUrl(value.imgUrl)}}" alt="" /></a>
+                <h2 class="screenHeader"><span>Dutch</span></h2>
+                
+                   <!-- <a  ng-repeat="(key,value) in screen.imagesURL['NL']" class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}"><img src="{{getUrl(value.imgUrl)}}" alt="" /></a>-->
 
-                </p>
+                   <div class="row">
+                        <div class="col-md-3" ng-repeat="(key,value) in screen.imagesURL['NL']">
+                          <div class="thumb">
+                            <a class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}">
+                              <img src="{{getUrl(value.imgUrl)}}" class="img-responsive">
+                              <div class="hover-opaque">
+                              </div>
+                            </a>
+                          </div>
+                          <div class="thumb thumb-caption text-center">
+                            <figcaption><a href="#">{{value.deviceName}}</a></figcaption>
+                          </div>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div ng-if="screen.imagesURL['DE']">
-                <div>German</div>
-                <hr style=" margin-top: 10px; margin-bottom: 10px; border: 0; border-top: 1px solid #47748b;">
-                <p>
-                    <a  ng-repeat="(key,value) in screen.imagesURL['DE']" class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}"><img src="{{getUrl(value.imgUrl)}}" alt="" /></a>
+        
+                <h2 class="screenHeader"><span>German</span></h2>
+                
+                   <!-- <a  ng-repeat="(key,value) in screen.imagesURL['DE']" class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}"><img src="{{getUrl(value.imgUrl)}}" alt="" /></a>-->
 
-                </p>
+                   <div class="row">
+                        <div class="col-md-3" ng-repeat="(key,value) in screen.imagesURL['DE']">
+                          <div class="thumb">
+                            <a class="fancybox-thumbs" data-fancybox-group="thumb" href="{{getUrl(value.imgUrl)}}">
+                              <img src="{{getUrl(value.imgUrl)}}" class="img-responsive">
+                              <div class="hover-opaque">
+                              </div>
+                            </a>
+                          </div>
+                          <div class="thumb thumb-caption text-center">
+                            <figcaption><a href="#">{{value.deviceName}}</a></figcaption>
+                          </div>
+                        </div>
+                    </div>
                 </div>
 
 

@@ -68,11 +68,13 @@
 <notifications-bar class="notifications"  closeIcon="fa fa-times-circle"></notifications-bar>
       <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
     <div class="titlebar">
-          <div class="navbar-header">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                <i class="glyphicon glyphicon-align-left"></i>
-                                <span>Toggle Sidebar</span>
-                            </button>
+          <div id="sidebarCollapse" class="navbar-header">
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+           <span class="glyphicon">&#xe236;</span>
+                            
+                            <img style="height: 35px;width: 125px;" src="logo.png"/>
                         </div>
     </div>
         <div class="wrapper" style="margin-top: 55px;">
@@ -85,7 +87,7 @@
                 <ul class="list-unstyled components">
                     <div class="Panel" id="Panel">
                     <nav>
-                        <ul class="Tabs">
+                        <ul id="Tabs" class="Tabs">
                             <li class="Tabs__tab active Tab" md-on-select="onTabChanges(0)"><a href="#">Fortis</a></li>
                             <li class="Tabs__tab Tab" md-on-select="onTabChanges(1)"><a href="#">Fintro</a></li>
                             <li class="Tabs__tab Tab" md-on-select="onTabChanges(2)"><a href="#">Hellobank</a></li>
@@ -111,7 +113,7 @@
                             <li><a href="#">Page 3</a></li>
                         </ul>
                     </li>-->
-                     <li ng-repeat="screen in selectedBrandScreens"  ng-class="{active:$first}">
+                     <li ng-repeat="screen in selectedBrandScreens" data-ng-click="toggleObject.item = $index" data-ng-class="{'active' : toggleObject.item == $index}">
                         <a href="index.html#/dashboard?screen={{screen.screenName}}">{{screen.screenName}}</a>
                     </li>
                 </ul>

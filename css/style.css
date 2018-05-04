@@ -7,6 +7,11 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
+        font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
 }
 
 p {
@@ -56,7 +61,7 @@ a, a:hover, a:focus {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #363F48;
+    background: #222d32;
     color: #fff;
     transition: all 0.3s;
 }
@@ -67,7 +72,7 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #363F48;
+    background: #222d32;
 }
 
 #sidebar ul.components {
@@ -85,19 +90,31 @@ a, a:hover, a:focus {
 }
 
 #sidebar ul li a {
+    color: #fff;
     padding: 10px;
     font-size: 1.1em;
     display: block;
 }
 #sidebar ul li a:hover {
     color: #7386D5;
-    background: #fff;
+    background: #ccc;
+}
+
+#Tabs ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    color: #fff;
+    background: #1e282c;
 }
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    color: #fff;
+    background: #1e282c;
+    border-left-color: #3c8dbc;
+    border-left: 3px solid #3c8dbc;
 }
+
+
 
 
 a[data-toggle="collapse"] {
@@ -214,6 +231,7 @@ a.article, a.article:hover {
 .Tab.active > a {
     background: #363F48;
             color: #fff;
+            border-left: 0px solid #3c8dbc;
         }
 
 .Tab:hover > a {
@@ -221,6 +239,7 @@ a.article, a.article:hover {
             color: #fff;
         }
  #Panel ul li.active > a {
+        border-left: 0px solid #3c8dbc;
     color: #fff;
     background: #363F48;
  }
@@ -476,7 +495,7 @@ body {
   background: #F5F5F5;
   margin: 50px;
   font-family: Ubuntu, sans-serif;
-  font-weight: 700;
+  font-weight: 350;
 }
 
 button {
@@ -510,8 +529,9 @@ button {
 
 
 .titlebar {
+    box-shadow: 0 2px 5px 0 rgba(74, 41, 41, 0.3);
         z-index: 2222;
-    height: 65px;
+    height: 55px;
   overflow: hidden;
   background-color: #333;
   position: fixed;
@@ -519,9 +539,12 @@ button {
   width: 100%;
   margin:0px;
   border-radius: 0px;
+      background: #222D36;
 }
 
 .titlebar a {
+    border-radius: 0px;
+    background: transparent;
   float: left;
   display: block;
   color: #f2f2f2;
@@ -532,7 +555,7 @@ button {
 }
 
 .titlebar a:hover {
-  background: #ddd;
+  background: #333;
   color: black;
 }
 

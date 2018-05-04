@@ -10,6 +10,8 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter,$r
     $scope.screens = [];
     $scope.selectedBrand = "fortis";
     $scope.selectedBrandScreens = [];
+
+    $scope.toggleObject = {item: -1};
    
     // Now load the data from server
     _refreshEmployeeData();
@@ -18,6 +20,7 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter,$r
         console.log('Current tab ' + currentTabIndex);
         localStorage.setItem('active',currentTabIndex);
         console.log(localStorage.getItem('active'));
+        $scope.toggleObject = {item: -1};
       };
 
        $scope.loadScreenByBrand = function(value) {

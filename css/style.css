@@ -466,7 +466,7 @@ a.article, a.article:hover {
 .thumb-caption {
     font-size: 10px;
     font-weight: 400;
-     background: #fff;
+     background: #99cc;
     border-color: #E6E6E6;
     border-style: solid;
     border-width: 0px 1px 1px 1px;
@@ -476,7 +476,7 @@ a.article, a.article:hover {
 }
 
 figcaption a {
-  color: #4E4E54;
+  color: #fff;
   -moz-transition: color 0.5s ease;
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
@@ -558,4 +558,34 @@ button {
   background: #333;
   color: black;
 }
+
+
+
+/*NAV BAR*/
+
+#sidebarCollapse {
+  display: block;
+  border: none;
+  float: left;
+  padding: 18px;
+  margin: 0;
+  background: none;
+  -webkit-transition: background 0.15s linear;
+  transition: background 0.15s linear;
+  overflow: hidden;
+}
+
+
+#sidebarCollapse .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #21bbef;
+}
+
+#sidebarCollapse .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+
 

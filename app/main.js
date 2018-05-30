@@ -72,7 +72,7 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter,$r
    };
   $scope.brandData = [{
         "label": "Fortis",
-            "id": "fortisd"
+            "id": "fortis"
     }, {
         "label": "Hellobank",
             "id": "hellobank"
@@ -80,6 +80,30 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter,$r
         "label": "Fintro",
             "id": "fintro"
   }];
+
+  $scope.$watch('brandModel', function( newValue, oldValue ){
+     console.log('entireScope has changed---'+newValue+'-'+oldValue);
+     var a=[];
+      for (var i=0; i<newValue.length; i++) {
+           console.log(newValue[i].id);
+           $arra = $scope.getScreenNames(newValue[i].id);
+           console.log($arra);
+           Array.prototype.push.apply(a,$arra);
+           console.log(a);
+         }
+         $scope.screenData  = UniqueArraybyId(a ,"id");
+  }, true);
+
+     $scope.getScreenNames = function(value) {
+              $scope.selectedBrandScreens = ($scope.screens[value.toLowerCase()]) ;
+              var a=[];
+               for (var i=0; i<$scope.selectedBrandScreens.length; i++) {
+                    var obj = { "label":$scope.selectedBrandScreens[i].screenName, "id":$scope.selectedBrandScreens[i].screenName};
+                    console.log($scope.selectedBrandScreens[i].screenName);
+                    a.push(obj);
+                }
+                return a;
+          };
    //////////////////SCREEN///////////////
 
   $scope.screenModel = [];
@@ -186,6 +210,24 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter,$r
   }];
  ///////////////////////////////////////////
  
- 
+
+
+
+
+
+
+     function UniqueArraybyId(collection, keyname) {
+               var output = [],
+                   keys = [];
+
+               angular.forEach(collection, function(item) {
+                   var key = item[keyname];
+                   if(keys.indexOf(key) === -1) {
+                       keys.push(key);
+                       output.push(item);
+                   }
+               });
+         return output;
+    };
  
     });

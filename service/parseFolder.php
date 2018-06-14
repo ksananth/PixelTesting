@@ -5,13 +5,18 @@ $fintro = parseBrandFolders(getFolderPath('fintro'));
 $helloBank = parseBrandFolders(getFolderPath('hellobank'));
 $fortis = parseBrandFolders(getFolderPath('fortis'));
 
-$final = new stdClass();
-$final->fortis = $fortis;
-$final->fintro = $fintro;
-$final->hellobank = $helloBank;
+    $final = new stdClass();
+    if(isset($fortis)){
+        $final->fortis = $fortis;
+    }
+    if(isset($fintro)){
+        $final->fintro = $fintro;
+    }
+    if(isset($helloBank)){
+        $final->hellobank = $helloBank;
+    }
 
-
-print_r(json_encode($final));
+    print_r(json_encode($final));
 
 
 function getFolderPath($brand) {
@@ -30,6 +35,7 @@ function getFolderPath($brand) {
 
 function parseBrandFolders($path) {
 
+if (file_exists($path)) {
       	$dir = new DirectoryIterator($path);
       	$folderArray = array();
         $screenArray = array();
@@ -91,8 +97,10 @@ function parseBrandFolders($path) {
               }
               $count++;
             }
+
           }
           sort($screenArray);
         return $screenArray;
+        }
 }
 ?>

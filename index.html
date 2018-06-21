@@ -44,12 +44,21 @@
     <link rel = "stylesheet"
          href = "https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
          <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-   
-    
+
+
+
+
+
         <script src="libs/angular_1.6.7.js"></script>
         <script src="js/angular-route.js"></script>
   <script src="js/angular-animate.js" ></script>
-  <script src="js/toaster.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+        <!-- Angular Material Library -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+
+        <script src="js/toaster.js"></script>
   <script src="libs/ngNotificationsBar/angular-sanitize.js"></script>
   <script src="libs/ngNotificationsBar/ngNotificationsBar.min.js"></script>
 
@@ -97,24 +106,7 @@
                         </ul>
                     </nav>
                     </div>
-                    <!--
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Language Screen</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="#">Home 1</a></li>
-                            <li><a href="#">Home 2</a></li>
-                            <li><a href="#">Home 3</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Condition Screen</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li><a href="#">Page 1</a></li>
-                            <li><a href="#">Page 2</a></li>
-                            <li><a href="#">Page 3</a></li>
-                        </ul>
-                    </li>-->
+
                      <li ng-repeat="screen in selectedBrandScreens" data-ng-click="toggleObject.item = $index" data-ng-class="{'active' : toggleObject.item == $index}">
                         <a href="index.html#/dashboard?screen={{screen.screenName}}">{{screen.screenName}}</a>
                     </li>
@@ -137,12 +129,13 @@
                         <div style="width :33%; padding-top:10px; padding-right:10px; float: left;">
                             <div ng-dropdown-multiselect="" options="brandData" selected-model="brandModel" checkboxes="true" translation-texts ="brandText" extra-settings="brandSettings"></div>
                         </div>
+                        <div style="width :33%; padding-top:10px; padding-right:10px; float: left;" class="center-block">
+                            <div ng-dropdown-multiselect="" options="languageData" selected-model="languageModel" checkboxes="true" translation-texts ="languageText" extra-settings="languageSettings"></div>
+                        </div>
                         <div style="width :33%; padding-top:10px; padding-right:10px; float: left;" >
                             <div ng-dropdown-multiselect="" options="screenData" selected-model="screenModel" checkboxes="true" translation-texts ="screenText" extra-settings="screenSettings"></div>
                         </div>
-                        <div style="width :33%; padding-top:10px; padding-right:10px; float: left;" class="center-block">
-                           <div ng-dropdown-multiselect="" options="languageData" selected-model="languageModel" checkboxes="true" translation-texts ="languageText" extra-settings="languageSettings"></div>
-                        </div>
+
                     </div>
                     <div class="col-lg-12">
                         <div style="width :33%; padding-top:10px; padding-right:10px; float: left;">
@@ -153,12 +146,10 @@
                   
 
                     <div class="col-lg-12" style="text-align: right;">
-                        <button type="button" class="btn btn-warning">Clear Filters</button>
-                       <button type="button" class="btn btn-primary">Search</button>
+                        <button type="button" class="btn btn-warning " ng-click="clearSearch()">Clear Filters</button>
+                       <a type="button" href="index.html#/searchResult?"  class="btn btn-primary">Search</a>
                     </div>
-
-                        
-                    </div>
+                </div>
                 </nav>
 
 

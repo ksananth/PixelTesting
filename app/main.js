@@ -1,5 +1,5 @@
 //var app = angular.module("AutomateScreenshotApp", ['angularjs-dropdown-multiselect']);
- var app = angular.module('myApp', ['ngNotificationsBar', 'ngSanitize','ngRoute', 'toaster','angularjs-dropdown-multiselect','ngAnimate']);
+ var app = angular.module('myApp', ['ngNotificationsBar', 'ngSanitize','ngRoute', 'toaster','angularjs-dropdown-multiselect','ngAnimate','ngMaterial']);
 
 // Controller Part
 app.controller("ManageScreenshotsController", function($scope, $http, $filter,$rootScope) {
@@ -23,10 +23,11 @@ app.controller("ManageScreenshotsController", function($scope, $http, $filter,$r
       console.log('deviceModel '+ $scope.deviceModel);
       console.log('languageModel '+ $scope.languageModel);
 
-      $scope.searchedBrands =[];
-      $scope.searchedScreens =[];
-      $scope.searchedLanguage =[];
-      $scope.searchedDevices =[];
+      $scope.searchedResult =[];
+
+      for (i=0; i<$scope.brandModel.length; ++i) {
+        $scope.searchedResult[i] = $scope.brandModel[i];
+      }
     };
 
      $scope.clearSearch = function(){

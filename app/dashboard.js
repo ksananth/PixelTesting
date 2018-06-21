@@ -52,15 +52,15 @@ app.config(['$routeProvider',
   function ($routeProvider) {
         $routeProvider.
         when('/dashboard', {
-            title: 'Login',
+            title: 'dashboard',
             templateUrl: 'partials/dashboard.html',
             controller: 'screenController',
             animation: 'first'
         })
         .when('/searchResult', {
-            title: 'Login',
+            title: 'Search',
             templateUrl: 'partials/searchResult.html',
-            controller: 'authCtrl'
+            controller: 'screenController'
         })
         .when('/', {
             redirectTo: '/dashboard'
